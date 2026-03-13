@@ -25,8 +25,8 @@ wheels = [
 
 [[package]]
 name = "pisa-api"
-version = "0.1.16"
-source = { git = "https://github.com/PISA-Hut/pisa-api.git#d791f8b6565101dfcac5dce5fbc688be56281952" }
+version = "0.1.17"
+source = { git = "https://github.com/PISA-Hut/pisa-api.git#db31c8df8794c4497562ccbd1f553f3c31a66ce1" }
 dependencies = [
     { name = "grpcio" },
     { name = "protobuf" },
@@ -49,7 +49,7 @@ wheels = [
 
 [[package]]
 name = "runner"
-version = "0.1.0"
+version = "0.1.1"
 source = { virtual = "." }
 dependencies = [
     { name = "pisa-api" },

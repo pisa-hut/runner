@@ -4,7 +4,7 @@ from typing import Optional
 import grpc
 from google.protobuf.struct_pb2 import Struct
 
-from sbsvf_api import (
+from pisa_api import (
     sim_server_pb2,
     sim_server_pb2_grpc,
     config_pb2,
