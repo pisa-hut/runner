@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Optional
 
-from sbsvf_api import object_pb2
+from pisa_api import object_pb2
 
 
 class RoadObjectType(Enum):

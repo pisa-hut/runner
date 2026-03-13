@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Dict, Any
 from google.protobuf.struct_pb2 import Struct
 
-from sbsvf_api import control_pb2
+from pisa_api import control_pb2
 
 
 class CtrlMode(Enum):

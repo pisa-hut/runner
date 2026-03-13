@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import logging
 
-from sbsvf_api import position_pb2
+from pisa_api import position_pb2
 
 
 logger = logging.getLogger(__name__)
