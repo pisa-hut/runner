@@ -1,5 +1,29 @@
+import argparse
+import json
+
+from runner.runner import Runner
+
+
+def get_args():
+    parser = argparse.ArgumentParser(
+        description="Run a scenario based on a runner specification."
+    )
+    parser.add_argument(
+        "--runner_spec",
+        type=str,
+        required=True,
+        help="Path to the runner specification JSON file.",
+    )
+    return parser.parse_args()
+
+
 def main():
-    print("Hello from runner!")
+    args = get_args()
+
+    with open(args.runner_spec, "r") as f:
+        runner_spec = json.load(f)
+
+    runner = Runner(runner_spec)
 
 
 if __name__ == "__main__":
