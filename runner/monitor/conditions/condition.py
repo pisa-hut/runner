@@ -29,7 +29,7 @@ class ConditionNode:
         assert (
             "type" in config
         ), f"Condition node config must have 'type' key, but got: {config}"
-        self.node_type = config.get("type")  # "AND" or "OR"
+        self.node_type = config.get("type").lower()  # "and" or "or"
         self.name = config.get("name", self.node_type)
         self.children = []
         for child in config.get("children", []):
