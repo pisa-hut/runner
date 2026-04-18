@@ -25,9 +25,10 @@ class EvaluationResult:
 
 class ConditionNode:
     def __init__(self, config: dict):
-        assert (
-            "type" in config
-        ), f"Condition node config must have 'type' key, but got: {config}"
+        if "type" not in config:
+            raise ValueError(
+                f"Condition node config must have 'type' key, but got: {config}"
+            )
         self.node_type = config.get("type").lower()  # "and" or "or"
         self.name = config.get("name", self.node_type)
         self.children = []
@@ -49,9 +50,8 @@ class ConditionNode:
                 raise ValueError(
                     f"Unknown condition type: {child_type} in config: {child}"
                 )
-        assert (
-            self.node_type.lower() not in ["and", "or"] or len(self.children) > 0
-        ), "Non-leaf nodes must have children"
+        if self.node_type.lower() in ["and", "or"] and len(self.children) == 0:
+            raise ValueError("Non-leaf nodes must have children")
 
         if self.node_type.lower() in CONDITION_REGISTRY:
             self.buffer = []
