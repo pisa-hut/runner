@@ -24,7 +24,7 @@ class Monitor:
 
         logger.debug("Built condition tree: %s", self.root)
 
-    def _load_config(self, path: str) -> dict:
+    def _load_config(self, path: str) -> None:
         self.cfg = yaml.safe_load(Path(path).read_text())
 
     def update(self, sim_time_ns: int, observation: dict, control: dict) -> None:
